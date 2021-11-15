@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import { w3cwebsocket as W3CWebSocket } from "websocket";
+import useWebSocket, { ReadyState } from "react-use-websocket";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { Asset } from "./types";
 import AssetsGrid from "./AssetsGrid";
@@ -13,24 +13,34 @@ import {
   Typography,
 } from "@material-ui/core";
 
-const client = new W3CWebSocket("ws://127.0.0.1:8080/prices");
+const socketUrl = "wss://arbitrage-scanner.herokuapp.com/prices";
 
 function App() {
+  const { lastMessage, readyState } = useWebSocket(socketUrl, {
+    onOpen: () => console.log("WebSocket Client Connected"),
+    shouldReconnect: (closeEvent) => true,
+  });
+
+  const connectionStatus = {
+    [ReadyState.CONNECTING]: "Connecting",
+    [ReadyState.OPEN]: "Open",
+    [ReadyState.CLOSING]: "Closing",
+    [ReadyState.CLOSED]: "Closed",
+    [ReadyState.UNINSTANTIATED]: "Uninstantiated",
+  }[readyState];
+
   const [assets, setAssets] = useState<Asset[]>([]);
+
   useEffect(() => {
-    client.onopen = () => {
-      console.log("WebSocket Client Connected");
-    };
-    client.onmessage = (message) => {
-      console.log(message);
+    if (lastMessage !== null) {
       setAssets((prev) => {
         return [
           ...prev,
-          JSON.parse(message.data as string) as unknown as Asset,
+          JSON.parse(lastMessage.data as string) as unknown as Asset,
         ];
       });
-    };
-  });
+    }
+  }, [lastMessage]);
 
   return (
     <div className="App">
@@ -38,7 +48,7 @@ function App() {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Arbitrage Scanner
+              Arbitrage Scanner ({connectionStatus})
             </Typography>
             <IconButton
               size="large"
