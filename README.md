@@ -2,6 +2,8 @@
 
 Simple React Typescript App which connects to the websocket endpoints from the Arbitrage Backend and show all the Base Points Events in a table.
 
+UI is deployed as github-pages app: https://oleksanderkorn.github.io/arbitrage-scanner-ui/
+
 ## Available Scripts
 
 In the project directory, you can run:

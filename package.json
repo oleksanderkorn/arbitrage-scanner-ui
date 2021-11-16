@@ -2,6 +2,7 @@
     "name": "arbitrage-scanner-frontend",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://oleksanderkorn.github.io/arbitrage-scanner-ui/",
     "dependencies": {
         "@emotion/react": "^11.6.0",
         "@emotion/styled": "^11.6.0",
@@ -30,17 +31,15 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "predeploy": "yarn build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
             "react-app",
             "react-app/jest"
         ]
-    },
-    "engines": {
-        "node": "14.x",
-        "yarn": "1.22.x"
     },
     "browserslist": {
         "production": [
@@ -55,6 +54,7 @@
         ]
     },
     "devDependencies": {
-        "@types/websocket": "^1.0.4"
+        "@types/websocket": "^1.0.4",
+        "gh-pages": "^3.2.3"
     }
 }
