@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@material-ui/core";
 
+// const socketUrl = "ws://localhost:3000/prices";
 const socketUrl = "wss://arbitrage-scanner.herokuapp.com/prices";
 
 function App() {

@@ -2,7 +2,8 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Asset } from "./types";
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "Asset", width: 150 },
+  { field: "id", hide: true },
+  { field: "asset", headerName: "Asset", width: 150 },
   {
     field: "basePoints",
     headerName: "Base Points",
@@ -42,7 +43,7 @@ export default function AssetsGrid(props: { assets: Asset[] }) {
         rows={props.assets}
         columns={columns}
         pageSize={20}
-        rowsPerPageOptions={[5]}
+        rowsPerPageOptions={[10, 20, 50]}
       />
     </div>
   );
