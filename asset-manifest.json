@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/arbitrage-scanner-ui/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/arbitrage-scanner-ui/static/js/main.f44e1de1.chunk.js",
-    "main.js.map": "/arbitrage-scanner-ui/static/js/main.f44e1de1.chunk.js.map",
+    "main.js": "/arbitrage-scanner-ui/static/js/main.4cd22184.chunk.js",
+    "main.js.map": "/arbitrage-scanner-ui/static/js/main.4cd22184.chunk.js.map",
     "runtime-main.js": "/arbitrage-scanner-ui/static/js/runtime-main.fd2d344b.js",
     "runtime-main.js.map": "/arbitrage-scanner-ui/static/js/runtime-main.fd2d344b.js.map",
     "static/js/2.1bec36f6.chunk.js": "/arbitrage-scanner-ui/static/js/2.1bec36f6.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.fd2d344b.js",
     "static/js/2.1bec36f6.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.f44e1de1.chunk.js"
+    "static/js/main.4cd22184.chunk.js"
   ]
 }
