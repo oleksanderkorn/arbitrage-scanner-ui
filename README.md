@@ -1,6 +1,8 @@
 # Arbitrage Scanner UI
 
-Simple React Typescript App which connects to the websocket endpoints from the [Arbitrage Scanner Backend](https://github.com/oleksanderkorn/arbitrage-scanner) and show all the Base Points Events in a table. Deo UI is deployed as [github-pages](https://oleksanderkorn.github.io/arbitrage-scanner-ui/)
+Simple React Typescript App which connects to the websocket endpoints from the [Arbitrage Scanner Backend](https://github.com/oleksanderkorn/arbitrage-scanner) and show all the Base Points Events in a table. 
+
+Demo UI app is deployed to [github-pages](https://oleksanderkorn.github.io/arbitrage-scanner-ui/)
 
 Backend Repository
 
